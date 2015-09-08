@@ -1,7 +1,7 @@
 FROM centos:centos7
-MAINTAINER SoftwareCollections.org <sclorg@redhat.com>
+MAINTAINER Eric Sites <eric@meros.io>
 
-# MongoDB image for OpenShift.
+# MongoDB image for DeployDock.
 #
 # Volumes:
 #  * /var/lib/mongodb/data - Datastore for MongoDB
@@ -15,8 +15,8 @@ ENV MONGODB_VERSION=2.4
 
 LABEL io.k8s.description="MongoDB is a scalable, high-performance, open source NoSQL database." \
       io.k8s.display-name="MongoDB 2.4" \
-      io.openshift.expose-services="27017:mongodb" \
-      io.openshift.tags="database,mongodb,mongodb24"
+      io.deploydock.expose-services="27017:mongodb" \
+      io.deploydock.tags="database,mongodb,mongodb24"
 
 EXPOSE 27017
 

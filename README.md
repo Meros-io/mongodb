@@ -1,7 +1,7 @@
-MongoDB for OpenShift - Docker images
+MongoDB for DeployDock - Docker images
 ========================================
 
-This repository contains Dockerfiles for MongoDB images for OpenShift.
+This repository contains Dockerfiles for MongoDB images for DeployDock.
 Users can choose between RHEL and CentOS based images.
 
 Versions
@@ -27,7 +27,7 @@ Choose either the CentOS7 or RHEL7 based image:
     subscribed RHEL machine.
 
 	```
-	$ git clone https://github.com/openshift/mongodb.git
+	$ git clone https://github.com/deploydock/mongodb.git
 	$ cd mongodb
 	$ make build TARGET=rhel7 VERSION=2.4
 	```
@@ -37,13 +37,13 @@ Choose either the CentOS7 or RHEL7 based image:
 	This image is available on DockerHub. To download it run:
 
 	```
-	$ docker pull openshift/mongodb-24-centos7
+	$ docker pull deploydock/mongodb-24-centos7
 	```
 
 	To build a MongoDB image from scratch run:
 
 	```
-	$ git clone https://github.com/openshift/mongodb.git
+	$ git clone https://github.com/deploydock/mongodb.git
 	$ cd mongodb
 	$ make build VERSION=2.4
 	```
@@ -60,7 +60,7 @@ initialization by passing `-e VAR=VALUE` to the Docker run command.
 
 |    Variable name          |    Description                              |
 | :------------------------ | -----------------------------------------   |
-|  `MONGODB_USER`       | User name for MONGODB account to be created |
+|  `MONGODB_USER`           | User name for MONGODB account to be created |
 |  `MONGODB_PASSWORD`       | Password for the user account               |
 |  `MONGODB_DATABASE`       | Database name                               |
 |  `MONGODB_ADMIN_PASSWORD` | Password for the admin user                 |
@@ -79,7 +79,7 @@ You can also set the following mount points by passing the `-v /host:/container`
 
 |  Volume mount point         | Description            |
 | :-------------------------- | ---------------------- |
-|  `/var/lib/mongodb/data`   | MongoDB data directory |
+|  `/var/lib/mongodb/data`    | MongoDB data directory |
 
 **Notice: When mouting a directory from the host into the container, ensure that the mounted
 directory has the appropriate permissions and that the owner and group of the directory
@@ -89,12 +89,12 @@ matches the user UID or name which is running inside the container.**
 Usage
 ---------------------------------
 
-For this, we will assume that you are using the `openshift/mongodb-24-centos7` image.
+For this, we will assume that you are using the `deploydock/mongodb-24-centos7` image.
 If you want to set only the mandatory environment variables and store the database
 in the `/home/user/database` directory on the host filesystem, execute the following command:
 
 ```
-$ docker run -d -e MONGODB_USER=<user> -e MONGODB_PASSWORD=<password> -e MONGODB_DATABASE=<database> -e MONGODB_ADMIN_PASSWORD=<admin_password> -v /home/user/database:/var/lib/mongodb/data openshift/mongodb-24-centos7
+$ docker run -d -e MONGODB_USER=<user> -e MONGODB_PASSWORD=<password> -e MONGODB_DATABASE=<database> -e MONGODB_ADMIN_PASSWORD=<admin_password> -v /home/user/database:/var/lib/mongodb/data deploydock/mongodb-24-centos7
 ```
 
 If you are initializing the database and it's the first time you are using the

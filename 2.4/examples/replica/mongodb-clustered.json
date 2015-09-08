@@ -118,7 +118,7 @@
             "containers": [
               {
                 "name":  "mongodb",
-                "image": "openshift/mongodb-24-centos7",
+                "image": "deploydock/mongodb-24-centos7",
                 "env": [
                   {
                     "name": "MONGODB_USER",
