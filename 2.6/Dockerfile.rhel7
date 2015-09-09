@@ -20,7 +20,7 @@ LABEL io.k8s.description="MongoDB is a scalable, high-performance, open source N
 
 # Labels consumed by Red Hat build service
 LABEL BZComponent="rh-mongodb26-docker" \
-      Name="rhscl/mongodb-26-rhel7" \
+      Name="deploydock/mongodb-26-rhel7" \
       Version="2.6" \
       Release="1" \
       Architecture="x86_64"
